@@ -1,0 +1,10 @@
+{
+  "name": "magic-panel",
+  "scripts": {
+    "postinstall": "npm install --prefix backend && npm install --prefix panel && npm install --prefix form",
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix panel\" \"npm run dev --prefix form\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
