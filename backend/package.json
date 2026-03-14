@@ -1,17 +1,24 @@
 {
-  "name": "magic-panel-backend",
+  "name": "packitback-backend",
   "version": "1.0.0",
   "main": "src/server.js",
   "type": "module",
   "scripts": {
     "start": "node src/server.js",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "allegro:token": "node src/integrations/allegro/get-token.js",
+    "allegro:sync": "node src/integrations/allegro/sync-allegro.js",
+    "waybills:sync": "node src/integrations/wygodnezwroty/sync-waybills.js"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "mysql2": "^3.19.1"
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.19.1",
+    "nodemailer": "^6.9.13",
+    "undici": "^6.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
