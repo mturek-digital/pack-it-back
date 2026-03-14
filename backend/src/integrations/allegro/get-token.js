@@ -15,7 +15,7 @@ if (!clientId || !clientSecret || !redirectUri) {
 }
 
 const authUrl =
-  `https://allegro.pl/auth/oauth/authorize` +
+  `https://allegro.pl.allegrosandbox.pl/auth/oauth/authorize` +
   `?response_type=code` +
   `&client_id=${encodeURIComponent(clientId)}` +
   `&redirect_uri=${encodeURIComponent(redirectUri)}`;
@@ -31,7 +31,7 @@ rl.question("CODE: ", async (code) => {
 
   const basic = Buffer.from(`${clientId}:${clientSecret}`).toString("base64");
 
-  const resp = await fetch("https://allegro.pl/auth/oauth/token", {
+  const resp = await fetch("https://allegro.pl.allegrosandbox.pl/auth/oauth/token", {
     method: "POST",
     headers: {
       Authorization: `Basic ${basic}`,
